@@ -57,7 +57,7 @@
       position: relative;
       z-index: 10;
       width: 100%;
-      max-width: 540px;
+      max-width: 560px;
     }
 
     .card {
@@ -66,7 +66,7 @@
       -webkit-backdrop-filter: blur(18px);
       border: 1px solid var(--card-border);
       border-radius: 28px;
-      padding: 36px 28px;
+      padding: 32px 24px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 77, 109, 0.2);
       text-align: center;
       animation: fadeIn 0.5s ease-out;
@@ -83,7 +83,7 @@
       display: flex;
       justify-content: center;
       gap: 6px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .step-dot {
@@ -119,17 +119,17 @@
     }
 
     h2 {
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       font-weight: 700;
       line-height: 1.4;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: #ffffff;
     }
 
     .subtext {
       font-size: 0.95rem;
       color: var(--text-sub);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       line-height: 1.5;
     }
 
@@ -137,16 +137,16 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .option-btn {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 16px;
-      padding: 16px 20px;
+      padding: 14px 18px;
       color: #fff;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 500;
       text-align: left;
       cursor: pointer;
@@ -166,42 +166,42 @@
 
     .option-btn .icon {
       font-size: 1.3rem;
+      flex-shrink: 0;
     }
 
     .schedule-box {
       background: rgba(0, 0, 0, 0.25);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 20px;
-      padding: 20px;
-      margin-bottom: 20px;
+      padding: 18px;
+      margin-bottom: 16px;
       text-align: left;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
 
     .input-group {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
 
     .input-label {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--accent-gold);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
-    /* Locked Date Box */
     .locked-date-box {
       background: rgba(255, 77, 109, 0.12);
       border: 1px dashed rgba(255, 182, 193, 0.5);
-      border-radius: 14px;
-      padding: 14px 18px;
+      border-radius: 12px;
+      padding: 12px 16px;
       color: #ffffff;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -217,7 +217,6 @@
       color: var(--accent-gold);
     }
 
-    /* Time Slot Pills */
     .time-pills {
       display: flex;
       gap: 10px;
@@ -228,11 +227,11 @@
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 12px;
-      padding: 12px;
+      padding: 10px;
       text-align: center;
       color: #ffffff;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.25s ease;
     }
@@ -254,8 +253,8 @@
       margin-top: 10px;
       border: 1px dashed rgba(255, 255, 255, 0.15);
       border-radius: 20px;
-      padding: 24px 16px;
-      min-height: 180px;
+      padding: 20px 16px;
+      min-height: 160px;
     }
 
     .evade-btn-container {
@@ -270,8 +269,8 @@
       background: linear-gradient(135deg, #ff4d6d 0%, #c9184a 100%);
       color: #fff;
       border: none;
-      padding: 18px 48px;
-      font-size: 1.35rem;
+      padding: 16px 42px;
+      font-size: 1.25rem;
       font-weight: 800;
       border-radius: 50px;
       cursor: pointer;
@@ -279,7 +278,7 @@
       transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       z-index: 15;
       width: auto;
-      min-width: 200px;
+      min-width: 180px;
       max-width: 100%;
       line-height: 1.2;
     }
@@ -288,8 +287,8 @@
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffd1dc;
-      padding: 12px 24px;
-      font-size: 0.9rem;
+      padding: 10px 20px;
+      font-size: 0.88rem;
       font-weight: 600;
       border-radius: 50px;
       cursor: pointer;
@@ -302,9 +301,9 @@
 
     .handwritten {
       font-family: 'Caveat', cursive;
-      font-size: 2.3rem;
+      font-size: 2.2rem;
       color: var(--accent-gold);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .success-card {
@@ -313,31 +312,30 @@
     }
 
     .success-card h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #fff;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .summary-box {
       background: rgba(0, 0, 0, 0.35);
       border: 1px solid rgba(255, 182, 193, 0.35);
       border-radius: 20px;
-      padding: 22px;
-      margin: 20px 0;
+      padding: 18px 20px;
+      margin: 16px 0;
       text-align: left;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       box-shadow: inset 0 0 20px rgba(255, 77, 109, 0.1);
     }
 
     .summary-item {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem;
+      flex-direction: column;
+      gap: 3px;
       border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
-      padding-bottom: 10px;
+      padding-bottom: 8px;
     }
 
     .summary-item:last-child {
@@ -347,36 +345,158 @@
 
     .summary-label {
       color: var(--text-sub);
-      font-weight: 500;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .summary-value {
       color: var(--accent-gold);
-      font-weight: 700;
-      text-align: right;
+      font-weight: 600;
+      font-size: 0.92rem;
+      line-height: 1.35;
     }
 
     .heart-pulse {
-      font-size: 4rem;
-      margin: 15px 0;
+      font-size: 3.5rem;
+      margin: 10px 0;
       animation: pulse 1.2s infinite ease-in-out;
     }
 
     @keyframes pulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+      50% { transform: scale(1.18); }
       100% { transform: scale(1); }
     }
 
+    .btn-but {
+      background: linear-gradient(135deg, #ffb7c5 0%, #ff4d6d 100%);
+      color: #2b031c;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 12px 28px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-but:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255, 77, 109, 0.6);
+    }
+
     .footer-note {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #ffffff;
-      margin-top: 18px;
+      margin-top: 14px;
       background: rgba(255, 77, 109, 0.25);
-      padding: 14px 18px;
-      border-radius: 16px;
+      padding: 12px 16px;
+      border-radius: 14px;
       border: 1px dashed rgba(255, 182, 193, 0.5);
-      line-height: 1.5;
+      line-height: 1.45;
+    }
+
+    /* Modal overlay for Teasing Message & Camera Mirror */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 100;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .modal-content {
+      background: rgba(35, 8, 26, 0.95);
+      border: 1px solid var(--accent-pink);
+      border-radius: 24px;
+      padding: 24px 20px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(255, 77, 109, 0.3);
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+    }
+
+    .tease-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .camera-box {
+      background: #000;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid var(--accent-pink);
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      height: 220px;
+      margin: 0 auto 16px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .camera-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scaleX(-1); /* Front camera mirror view */
+    }
+
+    .camera-placeholder {
+      position: absolute;
+      color: var(--text-sub);
+      font-size: 0.85rem;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .btn-close-modal {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-close-modal:hover {
+      background: var(--accent-pink);
     }
   </style>
 </head>
@@ -405,13 +525,13 @@
         <h2>If our date was a scene from a movie, how are we starting it? 🎬</h2>
         <p class="subtext">Pick the vibe Vartika...</p>
         <div class="options-grid">
-          <button class="option-btn" onclick="nextStep(2)">
+          <button class="option-btn" onclick="recordAnswer('q1', '☕ Soft lighting, quiet corner, talking for hours', 2)">
             <span class="icon">☕</span> Soft lighting, quiet corner, and us talking for hours like time stopped.
           </button>
-          <button class="option-btn" onclick="nextStep(2)">
+          <button class="option-btn" onclick="recordAnswer('q1', '✨ Rooftop view, good music & sly glances', 2)">
             <span class="icon">✨</span> A rooftop view, good music, and you pretending not to notice me staring.
           </button>
-          <button class="option-btn" onclick="nextStep(2)">
+          <button class="option-btn" onclick="recordAnswer('q1', '🚗 Late-night drive with our favorite playlist', 2)">
             <span class="icon">🚗</span> A late-night drive with the windows down and our favorite playlist.
           </button>
         </div>
@@ -422,13 +542,13 @@
         <h2>What’s your favorite way to be distracted? 💭</h2>
         <p class="subtext">Be honest with me!</p>
         <div class="options-grid">
-          <button class="option-btn" onclick="nextStep(3)">
+          <button class="option-btn" onclick="recordAnswer('q2', '👀 Mid-conversation long eye contact', 3)">
             <span class="icon">👀</span> Mid-conversation eye contact that goes on just a little too long.
           </button>
-          <button class="option-btn" onclick="nextStep(3)">
+          <button class="option-btn" onclick="recordAnswer('q2', '🤭 Playful teasing that makes you laugh', 3)">
             <span class="icon">🤭</span> Playful teasing that makes you cover your face and laugh.
           </button>
-          <button class="option-btn" onclick="nextStep(3)">
+          <button class="option-btn" onclick="recordAnswer('q2', '🤝 Sudden hold of your hand under the table', 3)">
             <span class="icon">🤝</span> A sudden hold of your hand under the table while someone else speaks.
           </button>
         </div>
@@ -439,13 +559,13 @@
         <h2>When I catch you smiling out of nowhere on our date, what are you thinking? 😊</h2>
         <p class="subtext">I definitely noticed...</p>
         <div class="options-grid">
-          <button class="option-btn" onclick="nextStep(4)">
+          <button class="option-btn" onclick="recordAnswer('q3', '🙈 He’s cuter in person than I thought', 4)">
             <span class="icon">🙈</span> "Okay, he’s actually cuter in person than I thought."
           </button>
-          <button class="option-btn" onclick="nextStep(4)">
+          <button class="option-btn" onclick="recordAnswer('q3', '💖 Easy & natural to be around him', 4)">
             <span class="icon">💖</span> "I really like how easy it feels to be around him."
           </button>
-          <button class="option-btn" onclick="nextStep(4)">
+          <button class="option-btn" onclick="recordAnswer('q3', '😉 Wondering how long I can play it cool', 4)">
             <span class="icon">😉</span> "I wonder how long I can keep playing it cool..."
           </button>
         </div>
@@ -456,13 +576,13 @@
         <h2>If I get a little flirtatious and lean in close, what’s your move? 🤫</h2>
         <p class="subtext">Getting a bit cheeky now...</p>
         <div class="options-grid">
-          <button class="option-btn" onclick="nextStep(5)">
+          <button class="option-btn" onclick="recordAnswer('q4', '✨ Hold my gaze and see who breaks first', 5)">
             <span class="icon">✨</span> Hold my gaze and see who breaks first.
           </button>
-          <button class="option-btn" onclick="nextStep(5)">
+          <button class="option-btn" onclick="recordAnswer('q4', '🌹 Smile, lean right back & see what happens', 5)">
             <span class="icon">🌹</span> Smile, lean right back, and see what happens next.
           </button>
-          <button class="option-btn" onclick="nextStep(5)">
+          <button class="option-btn" onclick="recordAnswer('q4', '🫳 Lightly pull my jacket & whisper something witty', 5)">
             <span class="icon">🫳</span> Lightly pull my jacket and whisper something witty.
           </button>
         </div>
@@ -473,13 +593,13 @@
         <h2>Who will pick up whom? 🚗</h2>
         <p class="subtext">How should we coordinate getting there?</p>
         <div class="options-grid">
-          <button class="option-btn" onclick="selectPickup('You pick me up 🚗', 6)">
+          <button class="option-btn" onclick="recordAnswer('pickup', '🚗 You pick me up (Passenger princess mode)', 6)">
             <span class="icon">🚗</span> You pick me up (Passenger princess mode)
           </button>
-          <button class="option-btn" onclick="selectPickup('I pick you up 🏎️', 6)">
+          <button class="option-btn" onclick="recordAnswer('pickup', '🏎️ I pick you up (Let me take the wheel!)', 6)">
             <span class="icon">🏎️</span> I pick you up (Let me take the wheel!)
           </button>
-          <button class="option-btn" onclick="selectPickup('We meet directly there 📍', 6)">
+          <button class="option-btn" onclick="recordAnswer('pickup', '📍 We meet directly at the spot', 6)">
             <span class="icon">📍</span> We meet directly at the spot
           </button>
         </div>
@@ -524,34 +644,77 @@
     <div class="card success-card" id="success-card">
       <div class="heart-pulse">💖</div>
       <h1>It's a Date, Vartika! 🎉</h1>
+      <p class="subtext" style="margin-bottom: 12px; color: #ffffff;">Our Official Date Blueprint</p>
       
       <div class="summary-box">
         <div class="summary-item">
-          <span class="summary-label">📅 Date:</span>
-          <span class="summary-value" id="summary-date">Today</span>
+          <span class="summary-label">🎬 Date Opening Scene</span>
+          <span class="summary-value" id="summary-q1">☕ Soft lighting & quiet corner</span>
         </div>
+
         <div class="summary-item">
-          <span class="summary-label">⏰ Time:</span>
-          <span class="summary-value" id="summary-time">8:00 PM</span>
+          <span class="summary-label">💭 Favorite Distraction</span>
+          <span class="summary-value" id="summary-q2">👀 Mid-conversation eye contact</span>
         </div>
+
         <div class="summary-item">
-          <span class="summary-label">🚗 Pickup Arrangement:</span>
-          <span class="summary-value" id="summary-pickup">You pick me up</span>
+          <span class="summary-label">😊 Secret Thought While Smiling</span>
+          <span class="summary-value" id="summary-q3">🙈 Cuter in person than thought</span>
+        </div>
+
+        <div class="summary-item">
+          <span class="summary-label">🤫 The Move When Leaning In</span>
+          <span class="summary-value" id="summary-q4">🌹 Smile, lean right back</span>
+        </div>
+
+        <div class="summary-item">
+          <span class="summary-label">🚗 Pickup Plan</span>
+          <span class="summary-value" id="summary-pickup">Passenger Princess Mode</span>
+        </div>
+
+        <div class="summary-item">
+          <span class="summary-label">📅 Date & Time Schedule</span>
+          <span class="summary-value" id="summary-datetime">Today @ 8:00 PM</span>
         </div>
       </div>
 
-      <p class="subtext" style="font-size: 1.05rem; color: #fff;">
-        I knew you couldn't resist! 😉<br>
-        Clear your schedule... I'm planning something special for us.
-      </p>
-      
+      <div>
+        <button class="btn-but" onclick="openTeaseModal()">
+          Wait... BUT! 🤔 <span>(Tap to inspect)</span>
+        </button>
+      </div>
+
       <p class="footer-note">
-        📲 <strong>Take a screenshot of this card right now</strong> with our agreed <strong>Date, Time & Pickup details</strong> and send it to me!
+        📲 <strong>Take a screenshot of this card right now</strong> with all your selected answers and send it over to me!
       </p>
     </div>
   </div>
 
+  <div class="modal-overlay" id="teaseModal">
+    <div class="modal-content">
+      <div class="modal-title">Wait a second, Vartika! 😜</div>
+      
+      <div class="tease-text" id="teaseDynamicText">
+        Analyzing your choices...
+      </div>
+
+      <p style="font-size: 0.88rem; color: var(--accent-gold); margin-bottom: 10px; font-weight: 600;">
+        📸 Look at that guilty / happy face right now!
+      </p>
+
+      <div class="camera-box">
+        <video id="webcamVideo" autoplay playsinline muted></video>
+        <div class="camera-placeholder" id="cameraStatus">
+          Requesting front camera access...<br>(Please allow camera permission)
+        </div>
+      </div>
+
+      <button class="btn-close-modal" onclick="closeTeaseModal()">Got it! Sending screenshot now 📲</button>
+    </div>
+  </div>
+
   <script>
+    // Background Canvas Particles
     const canvas = document.getElementById('bg-canvas');
     const ctx = canvas.getContext('2d');
     let width, height;
@@ -614,13 +777,23 @@
     }
     animateBg();
 
+    // App State Management
     let currentStep = 1;
-    let selectedPickupOption = "You pick me up 🚗";
     let selectedTimeSlot = "8:00 PM";
     let evadeScale = 1;
     let yesScale = 1;
+    let videoStream = null;
 
-    // Lock date strictly to today formatted cleanly
+    // Track Answers Across Steps
+    const userAnswers = {
+      q1: "☕ Soft lighting, quiet corner",
+      q2: "👀 Mid-conversation eye contact",
+      q3: "🙈 Cuter in person than thought",
+      q4: "🌹 Smile, lean right back",
+      pickup: "🚗 You pick me up"
+    };
+
+    // Lock date strictly to today
     const now = new Date();
     const formattedToday = now.toLocaleDateString('en-US', { 
       weekday: 'short', 
@@ -629,6 +802,11 @@
       year: 'numeric' 
     });
     document.getElementById('locked-date-display').innerText = formattedToday;
+
+    function recordAnswer(key, valueText, nextStepNum) {
+      userAnswers[key] = valueText;
+      nextStep(nextStepNum);
+    }
 
     function nextStep(step) {
       document.getElementById(`step-${currentStep}`).style.display = 'none';
@@ -640,11 +818,6 @@
       document.getElementById(`step-${currentStep}`).style.display = 'block';
       document.getElementById(`dot-${currentStep}`).classList.add('active');
       document.getElementById('step-badge').innerText = `Question ${currentStep} of 6`;
-    }
-
-    function selectPickup(optionText, nextStepNum) {
-      selectedPickupOption = optionText;
-      nextStep(nextStepNum);
     }
 
     function setTime(timeVal, element) {
@@ -675,15 +848,19 @@
       yesBtn.style.transform = `scale(${yesScale})`;
     }
 
-    // Celebration & Summary Display
+    // Celebration & Summary Display with ALL answers
     function celebrate() {
-      document.getElementById('summary-date').innerText = formattedToday;
-      document.getElementById('summary-time').innerText = selectedTimeSlot;
-      document.getElementById('summary-pickup').innerText = selectedPickupOption;
+      document.getElementById('summary-q1').innerText = userAnswers.q1;
+      document.getElementById('summary-q2').innerText = userAnswers.q2;
+      document.getElementById('summary-q3').innerText = userAnswers.q3;
+      document.getElementById('summary-q4').innerText = userAnswers.q4;
+      document.getElementById('summary-pickup').innerText = userAnswers.pickup;
+      document.getElementById('summary-datetime').innerText = `${formattedToday} @ ${selectedTimeSlot}`;
 
       document.getElementById('quiz-card').style.display = 'none';
       document.getElementById('success-card').style.display = 'block';
 
+      // Confetti burst
       const count = 200;
       const defaults = { origin: { y: 0.7 } };
 
@@ -698,6 +875,48 @@
       fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
       fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, colors: ['#ffd1dc', '#ff4d6d'] });
       fire(0.1, { spread: 120, startVelocity: 45 });
+    }
+
+    // Open Tease Modal & Trigger Front Selfie Camera Stream
+    async function openTeaseModal() {
+      const teaseText = `Wait a minute, Vartika... 🧐<br><br>` +
+        `Looking at this list of demands:<br>` +
+        `• <strong>Scene:</strong> ${userAnswers.q1}<br>` +
+        `• <strong>Pickup:</strong> ${userAnswers.pickup}<br>` +
+        `• <strong>Time:</strong> Today @ ${selectedTimeSlot}<br><br>` +
+        `You've got quite the high-maintenance royal expectations going on here! 👑😜 ` +
+        `Lucky for you, I am more than happy to indulge every single one of them ❤️`;
+
+      document.getElementById('teaseDynamicText').innerHTML = teaseText;
+      document.getElementById('teaseModal').style.display = 'flex';
+
+      // Request Front Camera Access (facingMode: 'user')
+      const videoEl = document.getElementById('webcamVideo');
+      const statusEl = document.getElementById('cameraStatus');
+
+      try {
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+          videoStream = await navigator.mediaDevices.getUserMedia({ 
+            video: { facingMode: 'user' }, 
+            audio: false 
+          });
+          videoEl.srcObject = videoStream;
+          statusEl.style.display = 'none';
+        } else {
+          statusEl.innerHTML = "Camera preview not supported on this browser context.<br>Imagine your beautiful smiling face right here! 😊";
+        }
+      } catch (err) {
+        console.log("Camera permission denied or unavailable:", err);
+        statusEl.innerHTML = "🙈 Camera access turned off or blocked.<br>That's okay, I already know you're blushing right now! 😉";
+      }
+    }
+
+    function closeTeaseModal() {
+      document.getElementById('teaseModal').style.display = 'none';
+      if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+        videoStream = null;
+      }
     }
   </script>
 </body>
