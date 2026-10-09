@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Special Question for Vartika ❤️</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #180312 0%, #330821 40%, #580d32 100%);
+      --card-bg: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 182, 193, 0.25);
+      --accent-gold: #ffb7c5;
+      --accent-pink: #ff4d6d;
+      --text-main: #ffffff;
+      --text-sub: #f3c4d3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 36px 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 77, 109, 0.15);
+      text-align: center;
+      animation: fadeIn 0.5s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .progress-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .step-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .step-dot.active {
+      background: var(--accent-pink);
+      box-shadow: 0 0 10px var(--accent-pink);
+      transform: scale(1.2);
+    }
+
+    .step-dot.completed {
+      background: var(--accent-gold);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background: rgba(255, 77, 109, 0.2);
+      border: 1px solid rgba(255, 77, 109, 0.4);
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .subtext {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .option-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 16px 20px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .option-btn:hover {
+      background: rgba(255, 77, 109, 0.25);
+      border-color: var(--accent-pink);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 77, 109, 0.2);
+    }
+
+    .option-btn .icon {
+      font-size: 1.3rem;
+    }
+
+    .proposal-arena {
+      position: relative;
+      min-height: 170px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 10px;
+    }
+
+    .btn-yes {
+      background: linear-gradient(135deg, #ff4d6d 0%, #c9184a 100%);
+      color: #fff;
+      border: none;
+      padding: 16px 36px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4);
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 15;
+    }
+
+    .btn-yes:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 30px rgba(255, 77, 109, 0.6);
+    }
+
+    .btn-evade {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffd1dc;
+      padding: 14px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.2s ease;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    .handwritten {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+    }
+
+    .success-card {
+      display: none;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .success-card h1 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .heart-pulse {
+      font-size: 4rem;
+      margin: 20px 0;
+      animation: pulse 1.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Heart Particle Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="container">
+    <div class="card" id="quiz-card">
+      
+      <!-- Progress Bar -->
+      <div class="progress-bar">
+        <div class="step-dot active" id="dot-1"></div>
+        <div class="step-dot" id="dot-2"></div>
+        <div class="step-dot" id="dot-3"></div>
+        <div class="step-dot" id="dot-4"></div>
+        <div class="step-dot" id="dot-5"></div>
+      </div>
+
+      <div class="badge" id="step-badge">Question 1 of 5</div>
+
+      <!-- QUESTION 1 -->
+      <div class="step-content" id="step-1">
+        <h2>If our date was a scene from a movie, how are we starting it? 🎬</h2>
+        <p class="subtext">Pick the vibe Vartika...</p>
+        <div class="options-grid">
+          <button class="option-btn" onclick="nextStep(2)">
+            <span class="icon">☕</span> Soft lighting, quiet corner, and us talking for hours like time stopped.
+          </button>
+          <button class="option-btn" onclick="nextStep(2)">
+            <span class="icon">✨</span> A rooftop view, good music, and you pretending not to notice me staring.
+          </button>
+          <button class="option-btn" onclick="nextStep(2)">
+            <span class="icon">🚗</span> A late-night drive with the windows down and our favorite playlist.
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="step-content" id="step-2" style="display: none;">
+        <h2>What’s your favorite way to be distracted? 💭</h2>
+        <p class="subtext">Be honest with me!</p>
+        <div class="options-grid">
+          <button class="option-btn" onclick="nextStep(3)">
+            <span class="icon">👀</span> Mid-conversation eye contact that goes on just a little too long.
+          </button>
+          <button class="option-btn" onclick="nextStep(3)">
+            <span class="icon">🤭</span> Playful teasing that makes you cover your face and laugh.
+          </button>
+          <button class="option-btn" onclick="nextStep(3)">
+            <span class="icon">🤝</span> A sudden hold of your hand under the table while someone else speaks.
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="step-content" id="step-3" style="display: none;">
+        <h2>When I catch you smiling out of nowhere on our date, what are you thinking? 😊</h2>
+        <p class="subtext">I definitely noticed...</p>
+        <div class="options-grid">
+          <button class="option-btn" onclick="nextStep(4)">
+            <span class="icon">🙈</span> "Okay, he’s actually cuter in person than I thought."
+          </button>
+          <button class="option-btn" onclick="nextStep(4)">
+            <span class="icon">💖</span> "I really like how easy it feels to be around him."
+          </button>
+          <button class="option-btn" onclick="nextStep(4)">
+            <span class="icon">😉</span> "I wonder how long I can keep playing it cool..."
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION 4 -->
+      <div class="step-content" id="step-4" style="display: none;">
+        <h2>If I get a little flirtatious and lean in close, what’s your move? 🤫</h2>
+        <p class="subtext">Getting a bit cheeky now...</p>
+        <div class="options-grid">
+          <button class="option-btn" onclick="nextStep(5)">
+            <span class="icon">✨</span> Hold my gaze and see who breaks first.
+          </button>
+          <button class="option-btn" onclick="nextStep(5)">
+            <span class="icon">🌹</span> Smile, lean right back, and see what happens next.
+          </button>
+          <button class="option-btn" onclick="nextStep(5)">
+            <span class="icon">🫳</span> Lightly pull my jacket and whisper something witty.
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION 5 (PROPOSAL) -->
+      <div class="step-content" id="step-5" style="display: none;">
+        <div class="handwritten">Dearest Vartika...</div>
+        <h2>So, will you let me take you out on an unforgettable date? ❤️</h2>
+        <p class="subtext">(Choose carefully... though there's really only one right answer 😉)</p>
+
+        <div class="proposal-arena" id="arena">
+          <button class="btn-yes" id="yesBtn" onclick="celebrate()">YES! Absolutely! ❤️</button>
+          <button class="btn-evade" id="noBtn" onmouseover="dodge(this)" onclick="dodge(this)" ontouchstart="dodge(this)">No 😜</button>
+          <button class="btn-evade" id="maybeBtn" onmouseover="dodge(this)" onclick="dodge(this)" ontouchstart="dodge(this)">Maybe 🙈</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card success-card" id="success-card">
+      <div class="heart-pulse">💖</div>
+      <h1>It's a Date, Vartika! 🎉</h1>
+      <p class="subtext" style="font-size: 1.1rem; color: #fff;">
+        I knew you couldn't resist! 😉<br>
+        Clear your schedule... I'm planning something special for us.
+      </p>
+      <p class="footer-note">Screenshot this & send it to me right now! 📲</p>
+    </div>
+  </div>
+
+  <script>
+    // Canvas Floating Hearts Animation
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    const hearts = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Heart {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * width;
+        this.y = height + 20;
+        this.size = Math.random() * 12 + 8;
+        this.speed = Math.random() * 1.5 + 0.8;
+        this.opacity = Math.random() * 0.5 + 0.2;
+        this.swing = Math.random() * 0.02;
+        this.swingStep = Math.random() * 100;
+      }
+      update() {
+        this.y -= this.speed;
+        this.swingStep += this.swing;
+        this.x += Math.sin(this.swingStep) * 0.8;
+        if (this.y < -20) this.reset();
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.fillStyle = `rgba(255, 182, 193, ${this.opacity})`;
+        ctx.beginPath();
+        const topCurveHeight = this.size * 0.3;
+        ctx.moveTo(0, topCurveHeight);
+        ctx.bezierCurveTo(0, 0, -this.size / 2, 0, -this.size / 2, topCurveHeight);
+        ctx.bezierCurveTo(-this.size / 2, (this.size + topCurveHeight) / 2, 0, this.size, 0, this.size);
+        ctx.bezierCurveTo(0, this.size, this.size / 2, (this.size + topCurveHeight) / 2, this.size / 2, topCurveHeight);
+        ctx.bezierCurveTo(this.size / 2, 0, 0, 0, 0, topCurveHeight);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < 25; i++) {
+      hearts.push(new Heart());
+    }
+
+    function animateBg() {
+      ctx.clearRect(0, 0, width, height);
+      hearts.forEach(h => {
+        h.update();
+        h.draw();
+      });
+      requestAnimationFrame(animateBg);
+    }
+    animateBg();
+
+    // Step Navigation Handler
+    let currentStep = 1;
+    let yesScale = 1;
+
+    function nextStep(step) {
+      document.getElementById(`step-${currentStep}`).style.display = 'none';
+      document.getElementById(`dot-${currentStep}`).classList.remove('active');
+      document.getElementById(`dot-${currentStep}`).classList.add('completed');
+
+      currentStep = step;
+
+      document.getElementById(`step-${currentStep}`).style.display = 'block';
+      document.getElementById(`dot-${currentStep}`).classList.add('active');
+      document.getElementById('step-badge').innerText = `Question ${currentStep} of 5`;
+    }
+
+    // Dodging Buttons Mechanics
+    function dodge(btn) {
+      const arena = document.getElementById('arena');
+      const arenaRect = arena.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+
+      btn.style.position = 'absolute';
+
+      const maxLeft = Math.max(10, arenaRect.width - btnRect.width - 20);
+      const maxTop = Math.max(10, arenaRect.height - btnRect.height - 20);
+
+      const randomLeft = Math.floor(Math.random() * maxLeft);
+      const randomTop = Math.floor(Math.random() * maxTop);
+
+      btn.style.left = `${randomLeft}px`;
+      btn.style.top = `${randomTop}px`;
+
+      // Grow YES button on each evasion attempt
+      yesScale += 0.15;
+      if (yesScale > 2.2) yesScale = 2.2;
+      const yesBtn = document.getElementById('yesBtn');
+      yesBtn.style.transform = `scale(${yesScale})`;
+    }
+
+    // Celebration Confetti Trigger
+    function celebrate() {
+      document.getElementById('quiz-card').style.display = 'none';
+      document.getElementById('success-card').style.display = 'block';
+
+      const count = 200;
+      const defaults = { origin: { y: 0.7 } };
+
+      function fire(particleRatio, opts) {
+        confetti(Object.assign({}, defaults, opts, {
+          particleCount: Math.floor(count * particleRatio)
+        }));
+      }
+
+      fire(0.25, { spread: 26, startVelocity: 55, colors: ['#ff4d6d', '#ffb7c5'] });
+      fire(0.2, { spread: 60, colors: ['#ffffff', '#ff4d6d'] });
+      fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+      fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, colors: ['#ffd1dc', '#ff4d6d'] });
+      fire(0.1, { spread: 120, startVelocity: 45 });
+    }
+  </script>
+</body>
+</html>
